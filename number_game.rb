@@ -3,7 +3,7 @@ class Number
     attr_reader :win 
 
     def initialize
-        @number = 5
+        @number = Random.rand(1..50)
         @win = false
     end
 
@@ -12,9 +12,9 @@ class Number
             @win = true
             return "You WIN!!!"
         elsif number > @number
-            return "The number informed is higher..."
+            return "The number is bigger..."
         else 
-            return "The number informed is smaller..."
+            return "The number is smaller..."
         end
     end    
 end

@@ -1,9 +1,13 @@
+#inside the LIB, it must contain the CLASSES!
+require_relative 'loader.rb'
+
 class Number
     attr_reader :number
     attr_reader :win 
 
     def initialize
-        @number = Random.rand(1..50)
+        Loader.loading       
+        @number = Random.rand(1..100)
         @win = false
     end
 
@@ -18,13 +22,3 @@ class Number
         end
     end    
 end
-
-game = Number.new
-
-until game.win do 
-    puts "Enter a number:"
-    number = gets.to_i    
-    puts game.guess_number(number)
-end
-
-
